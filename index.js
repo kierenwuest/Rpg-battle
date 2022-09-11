@@ -67,8 +67,8 @@ function drawGraphic() {
 // window.requestAnimationFrame(drawGImage);
 
 
-const height = gH / 10 + 3; // number of rows
-const width = gW / 10; // number of columns
+const height = 30; // number of rows
+const width = 30; // number of columns
 
 let fire = new Array(width * height).fill(0); // declare and reset the array that holds the value of all the tiles
 
