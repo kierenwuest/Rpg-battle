@@ -82,10 +82,25 @@
   /* border: 1px solid red; */
 }
 
-.coatarms {
-  top: 130px;
-  left: 44%;
-  width: 170px;
+.grass {
+  top: 140px;
+  left: 38.5%;
+  width: 300px;
+  position: absolute;
+}
+
+.archer {
+  top: 225px;
+  left: 39%;
+  width: 70px;
+  position: absolute;
+}
+
+.swordman {
+  top: 208px;
+  left: 52.5%;
+  width: 120px;
+  transform:scaleX(-1);
   position: absolute;
 }
 

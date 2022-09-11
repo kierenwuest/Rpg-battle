@@ -52,7 +52,7 @@ function drawGraphic() {
   gCtx.fillStyle = "white";
   gCtx.textAlign = "center";
   gCtx.font = "40px Kanit";
-  gCtx.fillText("Battle Game", gW / 2, gW / 2 - 40);
+  gCtx.fillText("Battle Royale", gW / 2, gW / 2 - 40);
   window.requestAnimationFrame(drawGraphic);
 }
 
@@ -96,7 +96,7 @@ function windblow() {
  
 }
 
-setInterval(windblow, 400);
+setInterval(windblow, 4000);
 
 
 
