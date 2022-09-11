@@ -1,10 +1,10 @@
-//------------------ Greatest Archer In The Land ------------------//
+//------------------ Battle Royal ------------------//
 // A ambitious RPG Battle simultor by Kieren Wuest Sept 2022
 // Ambitious as this is likely well over my expereince level andnot based on a tutorial
 // I may need to come back to this later
 
 // const palette = {
-// 	// https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500
+// 	https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500
 // 	"Light Cornflower Blue":"#8ecae6",
 // 	"Blue Green":"#219ebc",
 // 	"Prussian Blue":"#023047",
@@ -18,22 +18,6 @@
 // 	"Selective Yellow": rgba(255, 183, 3, 1);
 // 	"Tangerine": rgba(251, 133, 0, 1);
 
-// Find most efficent for 4 canvases
-// const canvas = document.getElementById("canvas");
-// const ctx = canvas.getContext("2d");
-
-// const W = (canvas.width = 1200);  //Not ness
-// const H = (canvas.height = 600);  //Not ness
-
-//Not ness
-// document.getElementById('gameDiv').setAttribute("style","width:"+ W +"px;height:"+ H +"px"); //eergh
-// document.getElementById('playerDiv').setAttribute("style","background: #ffb703; left: "+ 110 +"px");
-// document.getElementById('enemyDiv').setAttribute("style","background: #ffb903; left: "+ ((W/3)*2 + 110 ) +"px");
-
-// const height = 20; // number of rows
-// const width = 38; // number of columns
-
-// let context = document.getElementById("graphic").getContext("2d");
 
 const gCanvas = document.getElementById("graphic");
 const gCtx = gCanvas.getContext("2d");
@@ -45,27 +29,12 @@ gCanvas.width = gW;
 gCanvas.height = gH;
 
 function drawGraphic() {
-  //   gCtx.fillStyle = "black";
-  //   gCtx.fillRect(0, 0, gW, gH);
-  //   gCtx.strokeStyle = "white";
-  //   gCtx.strokeRect(2, 2, gW - 4, gH - 4);
   gCtx.fillStyle = "white";
   gCtx.textAlign = "center";
   gCtx.font = "40px Kanit";
   gCtx.fillText("Battle Royale", gW / 2, gW / 2 - 40);
   window.requestAnimationFrame(drawGraphic);
 }
-
-// const sBBG = new Image();
-// sBBG.src = "/RPG.png"; // 101 x 54 px
-// function drawGImage() {
-//   sBBG.onload = function () {
-//     gCtx.drawImage(sBBG, gW / 2 - 101, gH / 2 - 54, 202, 108);
-//   };
-//   window.requestAnimationFrame(drawGImage);
-// }
-// window.requestAnimationFrame(drawGImage);
-
 
 const height = 30; // number of rows
 const width = 30; // number of columns
