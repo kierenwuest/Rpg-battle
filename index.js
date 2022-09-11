@@ -30,13 +30,74 @@
 // document.getElementById('playerDiv').setAttribute("style","background: #ffb703; left: "+ 110 +"px");
 // document.getElementById('enemyDiv').setAttribute("style","background: #ffb903; left: "+ ((W/3)*2 + 110 ) +"px");
 
-const height = 20; // number of rows
-const width = 38; // number of columns
+// const height = 20; // number of rows
+// const width = 38; // number of columns
+
+// let context = document.getElementById("graphic").getContext("2d");
+
+const gCanvas = document.getElementById("graphic");
+const gCtx = gCanvas.getContext("2d");
+
+const gW = document.getElementById("graphic").clientWidth;
+const gH = document.getElementById("graphic").clientHeight;
+
+gCanvas.width = gW;
+gCanvas.height = gH;
+
+function drawGraphic() {
+  //   gCtx.fillStyle = "black";
+  //   gCtx.fillRect(0, 0, gW, gH);
+  //   gCtx.strokeStyle = "white";
+  //   gCtx.strokeRect(2, 2, gW - 4, gH - 4);
+  gCtx.fillStyle = "white";
+  gCtx.textAlign = "center";
+  gCtx.font = "40px Kanit";
+  gCtx.fillText("Battle Game", gW / 2, gW / 2 - 40);
+  window.requestAnimationFrame(drawGraphic);
+}
+
+// const sBBG = new Image();
+// sBBG.src = "/RPG.png"; // 101 x 54 px
+// function drawGImage() {
+//   sBBG.onload = function () {
+//     gCtx.drawImage(sBBG, gW / 2 - 101, gH / 2 - 54, 202, 108);
+//   };
+//   window.requestAnimationFrame(drawGImage);
+// }
+// window.requestAnimationFrame(drawGImage);
+
+
+const height = gH / 10 + 3; // number of rows
+const width = gW / 10; // number of columns
 
 let fire = new Array(width * height).fill(0); // declare and reset the array that holds the value of all the tiles
 
-let context = document.getElementById("graphic").getContext("2d");
-window.requestAnimationFrame(burn);
+let wind = 0, countup = true;
+let windy = 0
+
+function windblow() {
+    if (countup)
+  {
+  
+    ++wind;
+    
+    if (wind >= 3)
+      countup = false;
+  }
+  else
+  {
+    --wind;
+    
+    if (wind <= -3)
+      countup = true;
+  }
+  
+ windy = wind;
+ 
+}
+
+setInterval(windblow, 400);
+
 
 
 
@@ -50,7 +111,7 @@ function burn() {
   )
     for (let x = 0; x < width; x++) {
       // every column
-      let i = y * width + x; // convert the x and y coordinates to the array index
+      let i = y * width + x + windy; // convert the x and y coordinates to the array index
       fire[i] = Math.floor(
         // add the cell values:
         (fire[(y - 1) * width + ((x - 1 + width) % width)] + // below, left
@@ -61,25 +122,19 @@ function burn() {
       );
     } // division to lower the value as the fire goes up
 
-  for (let i = width * 4; i < width * height; i++) {
+  for (let i = width * 4; i < width * (height * 2); i++) {
     // now we're drawing the fire on the screen
-    context.beginPath(); // convert the index value i to screen coordinates and draw a box
-    context.rect(
-      (i % width) * 10,
-      (height - Math.floor(i / width)) * 10,
-      10,
-      10
-    );
-    context.fillStyle = "rgb(" + fire[i] + ",0,0)"; // the red component of the RGB color is the value of the cell.
-    context.fill();
-    
-  }
+
+    gCtx.beginPath(); // convert the index value i to screen coordinates and draw a box
+    gCtx.rect((i % width) * 10, (height - Math.floor(i / width)) * 10, 10, 10);
+    gCtx.fillStyle = "rgb(" + fire[i] + ",0,0)"; // the red component of the RGB color is the value of the cell.
+    gCtx.fill();
+  };
   window.requestAnimationFrame(burn);
-  context.fillStyle = "white";
-  context.textAlign = "center";
-  context.font = "bold 50px Kanit";
-  context.fillText("Battle",140, 100);
+  //console.log(windy);
+};
 
-}
 
+window.requestAnimationFrame(burn);
+window.requestAnimationFrame(drawGraphic);
 

@@ -3,11 +3,11 @@
 .containerClass {
   margin: auto;
   padding: 0px;
-  width: 1500px;
+  width: 1300px;
   height: 1100px;
   display: flex;
-  flex-direction: column;
-  border: 2px solid red;
+    flex-direction: column;
+  /* border: 2px solid red; */
   position: relative;
   font-family: 'Kanit', sans-serif;
   font-size: 0.875rem;
@@ -17,7 +17,7 @@
 .playerRow {
   margin: 0px;
   padding: 0px;
-  width: 1500px;
+  width: 100%;
   height: 550px;
   display: flex;
   flex-direction: row;
@@ -27,7 +27,7 @@
 .fieldRow {
   margin: 0px;
   padding: 0px;
-  width: 1500px;
+  width: 100%;
   height: 250px;
   /* 	border: 1px solid orange; */
 }
@@ -35,7 +35,7 @@
 .logRow {
   margin: 0px;
   padding: 0px;
-  width: 1500px;
+  width: 100%;
   height: 300px;
   display: flex;
   flex-direction: row;
@@ -55,6 +55,17 @@
   /* 	border: 1px solid blue; */
 }
 
+
+.player1Read,
+.player2Read  {
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+  height: 100%;
+  /* 	border: 1px solid blue; */
+}
+
+
 .middleGround {
   margin: 0px;
   padding: 0px;
@@ -65,9 +76,10 @@
 .gDiv {
   margin: 0px;
   padding: 0px;
+  margin-top: 20px;
   width: 100%;
   height: 60%;
-  /* 	border: 1px solid black; */
+  /* border: 1px solid red; */
 }
 
 .fieldSet {
@@ -107,7 +119,7 @@
 }
 
 canvas {
-  background-color: black;
+  /* background-color: black; */
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -125,9 +137,11 @@ button {
 
 
 table {
+	margin: auto;
 	border:1px solid #b3adad;
 	border-collapse:collapse;
 	padding:2px;
+	width: 96%;
 }
 table th {
 	border:1px solid #b3adad;
