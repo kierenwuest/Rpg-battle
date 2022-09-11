@@ -3,7 +3,7 @@
 // Ambitious as this is likely well over my expereince level andnot based on a tutorial
 // I may need to come back to this later
 
-// const palette = { 
+// const palette = {
 // 	// https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500
 // 	"Light Cornflower Blue":"#8ecae6",
 // 	"Blue Green":"#219ebc",
@@ -25,8 +25,61 @@
 // const W = (canvas.width = 1200);  //Not ness
 // const H = (canvas.height = 600);  //Not ness
 
-
 //Not ness
 // document.getElementById('gameDiv').setAttribute("style","width:"+ W +"px;height:"+ H +"px"); //eergh
 // document.getElementById('playerDiv').setAttribute("style","background: #ffb703; left: "+ 110 +"px");
 // document.getElementById('enemyDiv').setAttribute("style","background: #ffb903; left: "+ ((W/3)*2 + 110 ) +"px");
+
+const height = 20; // number of rows
+const width = 38; // number of columns
+
+let fire = new Array(width * height).fill(0); // declare and reset the array that holds the value of all the tiles
+
+let context = document.getElementById("graphic").getContext("2d");
+window.requestAnimationFrame(burn);
+
+
+
+function burn() {
+  for (let i = 0; i < width; i++) fire[i + width] = Math.random() * 255; // randomize the 2nd row from the bottom
+
+  for (
+    let y = height;
+    y > 1;
+    y-- // every row
+  )
+    for (let x = 0; x < width; x++) {
+      // every column
+      let i = y * width + x; // convert the x and y coordinates to the array index
+      fire[i] = Math.floor(
+        // add the cell values:
+        (fire[(y - 1) * width + ((x - 1 + width) % width)] + // below, left
+          fire[(y - 1) * width + ((x + width) % width)] + // immediately below
+          fire[(y - 1) * width + ((x + 1 + width) % width)] + // below, right
+          fire[(y - 2) * width + ((x + width) % width)]) / // two rows below
+          4.04
+      );
+    } // division to lower the value as the fire goes up
+
+  for (let i = width * 4; i < width * height; i++) {
+    // now we're drawing the fire on the screen
+    context.beginPath(); // convert the index value i to screen coordinates and draw a box
+    context.rect(
+      (i % width) * 10,
+      (height - Math.floor(i / width)) * 10,
+      10,
+      10
+    );
+    context.fillStyle = "rgb(" + fire[i] + ",0,0)"; // the red component of the RGB color is the value of the cell.
+    context.fill();
+    
+  }
+  window.requestAnimationFrame(burn);
+  context.fillStyle = "white";
+  context.textAlign = "center";
+  context.font = "bold 50px Kanit";
+  context.fillText("Battle",140, 100);
+
+}
+
+

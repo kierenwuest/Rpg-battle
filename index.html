@@ -1,35 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>RPG Battle</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <main>
-        <div id="containerId" class="containerClass">
-	<div class="playerRow">
-		<div class="player1Stat"></div>
-		<div class="player1Read"></div>
-		<div class="middleGround">
-			<div class="gDiv"><canvas id="graphic"></canvas></div>
-			<div class="fieldSet"></div></div>
-		<div class="player2Stat"></div>
-		<div class="player2Read"></div>
-	</div>
-	<div class="fieldRow"><canvas id="field"></canvas></div>
-	<div class="logRow">
-		<div class="player1Actions"></div>
-		<div class="player1Body"><canvas id="p1Body"></canvas></div>
-		<div class="gameLog"><!-- https://www.quackit.com/html/codes/html_scroll_box.cfm --></div>
-		<div class="player2Body"><canvas id="p2Body"></canvas></div>
-		<div class="player2Actions"></div>
-	</div>	
-</div>
+      <div id="containerId" class="containerClass">
+        <div class="playerRow">
+          <div class="player1Stat">
+		  	<div class="name">Name: <input id="pName" size="16"></input></div>
+			<div class="body">
+				<table>
+					<thead>
+						<tr>
+							<th>Body</th>
+							<th><br></th>
+							<th><br></th>
+							<th>Points</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Strength&nbsp;</td>
+							<td><input id="pStatST" size="1"></input></td>
+							<td><button id="pButST">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td><span style="font-style: normal; font-weight: 400;">Dexterity</span><br></td>
+							<td><input id="pStatDX" size="1"></input></td>
+							<td><button id="pButDX">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Health&nbsp;</td>
+							<td><input id="pStatHT" size="1"></input></td>
+							<td><button id="pButDX">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<th>Other Skills</th>
+							<th><br></th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Dodging Attacks&nbsp;</td>
+							<td><input id="pStatDodge" size="1"></input></td>
+							<td><button id="pButDodge">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Running&nbsp;</span><br></td>
+							<td><input id="pStatRun" size="1"></input></td>
+							<td><button id="pButRun">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Looking&nbsp;</td>
+							<td><input id="pStatObs" size="1"></input></td>
+							<td><button id="pButObs">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<th>Fight Skills</th>
+							<th><br></th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Bow Skill&nbsp;</td>
+							<td><input id="pStatBow" size="1"></input></td>
+							<td><button id="pButBow">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Dagger&nbsp;</span><br></td>
+							<td><input id="pStatDagger" size="1"></input></td>
+							<td><button id="pButDagger">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Sword&nbsp;</td>
+							<td><input id="pStatSword" size="1"></input></td>
+							<td><button id="pButSword">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Sheild&nbsp;</td>
+							<td><input id="pStatSheild" size="1"></input></td>
+							<td><button id="pButSheild">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Quick Draw Item&nbsp;</td>
+							<td><input id="pStatQuick" size="1"></input></td>
+							<td><button id="pButQuick">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Armour Level&nbsp;</td>
+							<td><select name="Armour Level" id="pArmourSel">
+								<option value="None">None</option>
+								<option value="Light">Light</option>
+								<option value="Medium">Medium</option>
+								<option value="Heavy">Heavy</option>
+							  </select></input></td>
+							<td><button id="pButArmorLvl">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="archs"></div>
+			<div class="done"></div>
+		  </div>
+          <div class="player1Read">
+						<div class="name">Billy Mcfluff</input></div>
+			<div class="stats">
+				<table>
+					<thead>
+						<tr>
+							<th>Stats</th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Training Points&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td><span style="font-style: normal; font-weight: 400;">Block&nbsp;</span><br></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Hit Points&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<th>Passives</th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Dodge&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Movement Speed&nbsp;</span><br></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Vision&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<th>Equipment</th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Bow&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Dagger&nbsp;</span><br></td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Sword&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Sheild&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Arrows&nbsp;</td>
+							<td>&nbsp;25</td>
+						</tr>
+						<tr>
+							<td>Armour Level&nbsp;</td>
+							<td>&nbsp;None</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="archdesc"></div>
+		  </div>
+          <div class="middleGround">
+            <div class="gDiv"><canvas id="graphic"></canvas></div>
+            <div class="fieldSet"></div>
+          </div>
+          <div class="player2Stat">
+			<div class="name">Name: <input id="eName" size="16"></input></div>
+			<div class="body">
+				<table>
+					<thead>
+						<tr>
+							<th>Body</th>
+							<th><br></th>
+							<th><br></th>
+							<th>Points</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Strength&nbsp;</td>
+							<td><input id="eStatST" size="1"></input></td>
+							<td><button id="eButST">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td><span style="font-style: normal; font-weight: 400;">Dexterity</span><br></td>
+							<td><input id="eStatDX" size="1"></input></td>
+							<td><button id="eButDX">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Health&nbsp;</td>
+							<td><input id="eStatHT" size="1"></input></td>
+							<td><button id="eButDX">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<th>Other Skills</th>
+							<th><br></th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Dodging Attacks&nbsp;</td>
+							<td><input id="eStatDodge" size="1"></input></td>
+							<td><button id="eButDodge">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Running&nbsp;</span><br></td>
+							<td><input id="eStatRun" size="1"></input></td>
+							<td><button id="eButRun">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Looking&nbsp;</td>
+							<td><input id="eStatObs" size="1"></input></td>
+							<td><button id="eButObs">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<th>Fight Skills</th>
+							<th><br></th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Bow Skill&nbsp;</td>
+							<td><input id="eStatBow" size="1"></input></td>
+							<td><button id="eButBow">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Dagger&nbsp;</span><br></td>
+							<td><input id="eStatDagger" size="1"></input></td>
+							<td><button id="eButDagger">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Sword&nbsp;</td>
+							<td><input id="eStatSword" size="1"></input></td>
+							<td><button id="eButSword">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Sheild&nbsp;</td>
+							<td><input id="eStatSheild" size="1"></input></td>
+							<td><button id="eButSheild">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Quick Draw Item&nbsp;</td>
+							<td><input id="eStatQuick" size="1"></input></td>
+							<td><button id="eButQuick">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Armour Level&nbsp;</td>
+							<td><select name="Armour Level" id="eArmourSel">
+								<option value="None">None</option>
+								<option value="Light">Light</option>
+								<option value="Medium">Medium</option>
+								<option value="Heavy">Heavy</option>
+							  </select></input></td>
+							<td><button id="eButArmorLvl">Set</button></td>
+							<td>&nbsp;0</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="archs"></div>
+			<div class="done"></div>
+		  </div>
+		  <div class="player2Read">
+			<div class="name">Ghengis Kahn</input></div>
+			<div class="stats">
+				<table>
+					<thead>
+						<tr>
+							<th>Stats</th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Training Points&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td><span style="font-style: normal; font-weight: 400;">Block&nbsp;</span><br></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Hit Points&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<th>Passives</th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Dodge&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Movement Speed&nbsp;</span><br></td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<td>Vision&nbsp;</td>
+							<td>&nbsp;0</td>
+						</tr>
+						<tr>
+							<th>Equipment</th>
+							<th><br></th>
+						</tr>
+						<tr>
+							<td>Bow&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Dagger&nbsp;</span><br></td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Sword&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Sheild&nbsp;</td>
+							<td>&nbsp;1</td>
+						</tr>
+						<tr>
+							<td>Arrows&nbsp;</td>
+							<td>&nbsp;25</td>
+						</tr>
+						<tr>
+							<td>Armour Level&nbsp;</td>
+							<td>&nbsp;None</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="archdesc"></div>
+		  </div>
+        </div>
+        <div class="fieldRow"><canvas id="field"></canvas></div>
+        <div class="logRow">
+          <div class="player1Actions"></div>
+          <div class="player1Body"><canvas id="p1Body"></canvas></div>
+          <div class="gameLog">
+            <!-- https://www.quackit.com/html/codes/html_scroll_box.cfm -->
+          </div>
+          <div class="player2Body"><canvas id="p2Body"></canvas></div>
+          <div class="player2Actions"></div>
+        </div>
+      </div>
     </main>
-	<script src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
