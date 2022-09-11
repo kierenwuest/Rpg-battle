@@ -82,6 +82,13 @@
   /* border: 1px solid red; */
 }
 
+.coatarms {
+  top: 130px;
+  left: 43%;
+  width: 200px;
+  position: absolute;
+}
+
 .fieldSet {
   margin: 0px;
   padding: 0px;
