@@ -1,0 +1,127 @@
+.containerClass {
+	margin: auto;
+	padding: 0px;
+	width: 1500px;
+	height:	1100px;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid red;
+	position: relative;
+}
+
+/* Main Rows */
+.playerRow {
+	margin: 0px;
+	padding: 0px;
+	width: 1500px;
+	height:	550px;
+	display: flex;
+	flex-direction: row;
+/* 	border: 1px solid green; */
+}
+
+.fieldRow {
+	margin: 0px;
+	padding: 0px;
+	width: 1500px;
+	height:	250px;
+/* 	border: 1px solid orange; */
+}
+
+.logRow {
+	margin: 0px;
+	padding: 0px;
+	width: 1500px;
+	height:	300px;
+	display: flex;
+	flex-direction: row;
+/* 	border: 1px solid orchid; */
+}
+
+/* Row 1 Colums */
+.player1Stat, .player1Read, .middleGround, .player2Stat, .player2Read {
+	margin: 0px;
+	padding: 0px;
+	width: 300px;
+	height:	100%;
+/* 	border: 1px solid blue; */
+}
+
+.middleGround {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.gDiv {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height:	60%;
+/* 	border: 1px solid black; */
+}
+
+.fieldSet {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height:	40%;
+/* 	border: 1px solid black;	 */
+}
+
+/* Row 3 Colums */
+
+.player1Actions, .player2Actions  {
+	margin: 0px;
+	padding: 0px;
+	width: 200px;
+	height:	100%;
+/* 	border: 1px solid purple; */
+}
+
+.player1Body, .player2Body {
+	margin: 0px;
+	padding: 0px;
+	width: 200px;
+	height:	100%;
+/* 	border: 1px solid lightgreen;	 */
+}
+
+.gameLog {
+	margin: 0px;
+	padding: 0px;
+	width: 700px;
+	height:	100%;
+/* 	border: 1px solid darkgoldenrod; */
+}
+
+canvas {
+	background-color: lightcoral;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height:	100%;
+}
+
+/* 
+.statinputs {
+	display: flex;
+	flex-direction: column;
+}
+
+.stat {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 2px;
+	margin-top: 2px;
+
+input {
+	width: 18px;
+}
+
+button {
+	width: 36px;
+} 
+
+*/
