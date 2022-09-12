@@ -112,15 +112,96 @@
 								<option value="Light">Light</option>
 								<option value="Medium">Medium</option>
 								<option value="Heavy">Heavy</option>
-							  </select></input></td>
+							  </select></td>
 							<td><button id="pButArmorLvl">Set</button></td>
 							<td>&nbsp;0</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<div class="archs"></div>
-			<div class="done"></div>
+			<div class="archs">
+				<table>
+					<thead>
+						<tr>
+							<th style="width: 42%;">Archetypes</th>
+							<th style="width: 42%;"><br></th>
+							<th style="width: 16%;"><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="pArch1" id="pArch1Sel">
+								<option value="null"></option>
+								<option value="Sharpshooter">Sharpshooter</option>
+								<option value="Lucky">Lucky</option>
+								<option value="Tough">Tough</option>
+								<option value="Nimble">Nimble</option>
+								<option value="Brute">Brute</option>
+							  </select></td>
+							<td><select name="pArch2" id="pArch2Sel">
+								<option value="null"></option>
+								<option value="Sharpshooter">Sharpshooter</option>
+								<option value="Lucky">Lucky</option>
+								<option value="Tough">Tough</option>
+								<option value="Nimble">Nimble</option>
+								<option value="Brute">Brute</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+					<thead>
+						<tr>
+							<th>Banes</th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="pBane1" id="pBane1Sel">
+								<option value="null"></option>
+								<option value="Clumsy">Clumsy</option>
+								<option value="Drunkard">Drunkard</option>
+								<option value="Sloth">Sloth</option>
+								<option value="OldVeteran">Old Veteran</option>
+								<option value="Youngster">Youngster</option>
+							  </select></td>
+							<td><select name="pBane2" id="pBane2Sel">
+								<option value="null"></option>
+								<option value="Clumsy">Clumsy</option>
+								<option value="Drunkard">Drunkard</option>
+								<option value="Sloth">Sloth</option>
+								<option value="OldVeteran">Old Veteran</option>
+								<option value="Youngster">Youngster</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+					<thead>
+						<tr>
+							<th>Quirks</th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="pQuirk1" id="pQuirkSel">
+								<option value="null"></option>
+								<option value="Superstitious">Superstitious</option>
+								<option value="Hiccups">Hiccups</option>
+								<option value="Fashionista">Fashionista</option>
+								<option value="WobblyKnees">Wobbly Knees</option>
+							  </select></td>
+							<td><select name="pQuirk2" id="pQuirk2Sel">
+								<option value="null"></option>
+								<option value="Superstitious">Superstitious</option>
+								<option value="Hiccups">Hiccups</option>
+								<option value="Fashionista">Fashionista</option>
+								<option value="WobblyKnees">Wobbly Knees</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+				</table>	
+			</div>
 		  </div>
           <div class="player1Read">
 						<div class="name">Billy McFluff</input></div>
@@ -194,7 +275,9 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="archdesc"></div>
+			<div class="charComp">
+				<button id="pReady">Ready!</button>
+			</div>
 		  </div>
           <div class="middleGround">
             <div class="gDiv">
@@ -204,7 +287,51 @@
 			<img class="swordman" src="img/swordsman.gif">
 			<!-- <img class="beast" src="img/beast.gif"> -->
 			</div>
-            <div class="fieldSet"></div>
+            <div class="fieldSet">
+				<table>
+					<thead>
+						<tr>
+							<th>Battle Field</th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>&nbsp;Distance</td>
+							<td>1000 meters</td>
+							<td><button id="fDist">Set</button></td>
+						</tr>
+						<tr>
+							<td>&nbsp;Time of Day</td>
+							<td><select name="fTimeDrop" id="fTimeSel">
+								<option value="Day">Day</option>
+								<option value="Twilight">Twilight</option>
+								<option value="Night">Night</option>
+							  </select></td>
+							<td><button id="fTime">Set</button></td>
+						</tr>
+						<tr>
+							<td>&nbsp;Incline</td>
+							<td>0 Deg</td>
+							<td><button id="fInc">Set</button></td>
+						</tr>
+						<tr>
+							<td>&nbsp;Environment</td>
+							<td><select name="fEnvDrop" id="fEnvSel">
+								<option value="None">Grass</option>
+								<option value="Light">Scrub</option>
+								<option value="Medium">Swamp</option>
+								<option value="Heavy">Forest</option>
+								<option value="Volcano">Volcano</option>
+							  </select></span><br></td>
+							<td><button id="fEnv">Set</button></td>
+						</tr>
+					</tbody>
+				</table>
+				<button id="Start">Start!</button>
+			</body>
+			</div>
           </div>
           <div class="player2Stat">
 			<div class="name">Name: <input id="eName" size="16"></input></div>
@@ -313,8 +440,89 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="archs"></div>
-			<div class="done"></div>
+			<div class="archs">
+				<table>
+					<thead>
+						<tr>
+							<th style="width: 42%;">Archetypes</th>
+							<th style="width: 42%;"><br></th>
+							<th style="width: 16%;"><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="eArch1" id="eArch1Sel">
+								<option value="null"></option>
+								<option value="Sharpshooter">Sharpshooter</option>
+								<option value="Lucky">Lucky</option>
+								<option value="Tough">Tough</option>
+								<option value="Nimble">Nimble</option>
+								<option value="Brute">Brute</option>
+							  </select></td>
+							<td><select name="eArch2" id="eArch2Sel">
+								<option value="null"></option>
+								<option value="Sharpshooter">Sharpshooter</option>
+								<option value="Lucky">Lucky</option>
+								<option value="Tough">Tough</option>
+								<option value="Nimble">Nimble</option>
+								<option value="Brute">Brute</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+					<thead>
+						<tr>
+							<th>Banes</th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="eBane1" id="eBane1Sel">
+								<option value="null"></option>
+								<option value="Clumsy">Clumsy</option>
+								<option value="Drunkard">Drunkard</option>
+								<option value="Sloth">Sloth</option>
+								<option value="OldVeteran">Old Veteran</option>
+								<option value="Youngster">Youngster</option>
+							  </select></td>
+							<td><select name="eBane2" id="eBane2Sel">
+								<option value="null"></option>
+								<option value="Clumsy">Clumsy</option>
+								<option value="Drunkard">Drunkard</option>
+								<option value="Sloth">Sloth</option>
+								<option value="OldVeteran">Old Veteran</option>
+								<option value="Youngster">Youngster</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+					<thead>
+						<tr>
+							<th>Quirks</th>
+							<th><br></th>
+							<th><br></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><select name="eQuirk1" id="eQuirk1Sel">
+								<option value="null"></option>
+								<option value="Superstitious">Superstitious</option>
+								<option value="Hiccups">Hiccups</option>
+								<option value="Fashionista">Fashionista</option>
+								<option value="WobblyKnees">Wobbly Knees</option>
+							  </select></td>
+							<td><select name="eQuirk2" id="eQuirk2Sel">
+								<option value="null"></option>
+								<option value="Superstitious">Superstitious</option>
+								<option value="Hiccups">Hiccups</option>
+								<option value="Fashionista">Fashionista</option>
+								<option value="WobblyKnees">Wobbly Knees</option>
+							  </select></td>
+							<td>&nbsp;0</td>
+					</tbody>
+				</table>
+			</div>
 		  </div>
 		  <div class="player2Read">
 			<div class="name">Ghengis Kahn</input></div>
@@ -388,7 +596,9 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="archdesc"></div>
+			<div class="charComp">
+				<button id="eReady">Ready!</button>
+			</div>
 		  </div>
         </div>
         <div class="fieldRow"><canvas id="field"></canvas></div>
